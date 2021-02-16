@@ -1,0 +1,30 @@
+server:
+  port: 8761
+
+spring:
+  # java管理扩展，用来管理和监控java程序
+  jmx:
+    default-domain: myblog_eureka
+  application:
+    name: myblog-eureka
+  security:
+    user:
+      name: user
+      password: password123
+
+eureka:
+  server:
+    # 开启自我保护机制
+    enable-self-preservation: true
+    # 几点之间数据读取超时时间（ms）
+    peer-node-read-timeout-ms: 3000
+    # 节点之间连接超时时长（ms）
+    peer-node-connect-timeout-ms: 3000
+  client:
+    # false表示不向注册中心注册自己
+    registerWithEureka: false
+    # false表示自己端就是注册中心，职责就是维护服务实例，并不需要去检索服务
+    fetchRegistry: false
+    serviceUrl:
+      # 设置与Eureka交互的地址查询服务和注册服务都需要依赖这个地址
+      defaultZone: http://user:password123@localhost:8761/eureka

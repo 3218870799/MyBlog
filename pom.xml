@@ -16,11 +16,22 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>myblog_eureka</module>
+        <module>myblog_utils</module>
+        <module>myblog_base</module>
+        <module>myblog_xo</module>
+        <module>myblog_admin</module>
+        <module>myblog_web</module>
+        <module>myblog_picture</module>
+        <module>myblog_sms</module>
+        <module>myblog_search</module>
+        <module>myblog_monitor</module>
+        <module>myblog_gateway</module>
+        <module>myblog_zipkin</module>
+        <module>myblog_spider</module>
+        <module>myblog_commons</module>
     </modules>
 
 
-    <!--配置版本-->
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -28,6 +39,7 @@
         <java.version>1.8</java.version>
         <swagger.version>2.6.1</swagger.version>
         <swagger.ui.version>2.6.1</swagger.ui.version>
+        <swagger.starter.version>3.0.0</swagger.starter.version>
         <servlet.api.version>3.0-alpha-1</servlet.api.version>
         <net.sf.json.lib.version>2.4</net.sf.json.lib.version>
         <alibaba.fastjson.version>1.2.31</alibaba.fastjson.version>
@@ -48,9 +60,16 @@
         <springBootAdmin.version>2.2.1</springBootAdmin.version>
         <JustAuth.version>1.15.1</JustAuth.version>
         <dyuproject.version>1.1.5</dyuproject.version>
-        <flexmark.version>0.61.0</flexmark.version>
+        <flexmark.version>0.62.2</flexmark.version>
         <ip2region.version>1.7.2</ip2region.version>
         <oshi.version>3.9.1</oshi.version>
+        <freemarker.version>2.3.28</freemarker.version>
+        <jaxb.version>2.3.0</jaxb.version>
+        <minio.version>7.1.4</minio.version>
+        <spring.mock.version>2.0.8</spring.mock.version>
+        <knife4j.version>3.0.2</knife4j.version>
+        <spring-cloud-alibaba.version>2.2.4.RELEASE</spring-cloud-alibaba.version>
+        <sentinel.version>2.1.0.RELEASE</sentinel.version>
     </properties>
 
     <dependencyManagement>
@@ -62,6 +81,15 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
